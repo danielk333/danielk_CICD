@@ -1,0 +1,14 @@
+services:
+  deploy:
+    build: ./deploy/
+    image: example_deploy:deploy
+    volumes:
+     - pkg:/scr/package
+
+volumes:
+  pkg:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: ./package
