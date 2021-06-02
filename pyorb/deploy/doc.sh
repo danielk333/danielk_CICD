@@ -3,6 +3,7 @@
 source ./env/bin/activate
 cd pyorb
 pip install .
+pip install .[dev]
 
 cd docsrc
 make clean

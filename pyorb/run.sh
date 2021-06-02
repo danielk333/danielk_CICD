@@ -47,8 +47,24 @@ pypi)
     docker-compose run -v pyorb_pkg:/src/pyorb deploy bash -e deploy.sh
     docker-compose down
     ;;
-ghpages)
+down) 
+    docker-compose down
+    ;;
+clean) 
+    sudo rm -rv pyorb
+    ;;
+docs)
     cd pyorb
+
+    if [ -z "$3" ]
+    then
+        echo "merging from branch master"
+        git checkout master
+    else
+        echo "merging from branch $3"
+        git checkout "$3"
+    fi
+    git pull
 
     if [ -z "$2" ]
     then
@@ -69,16 +85,17 @@ ghpages)
     fi
 
     echo "Removing old docs..."
-    rm -r ./docs/*
-    rm -r ./docsrc/build/*
-    rm -r ./docsrc/source/_autodoc/
-    rm -r ./docsrc/source/auto_gallery/
+    sudo rm -rv ./docs
+    mkdir docs
+    sudo rm -rv ./docsrc/build/*
+    sudo rm -rv ./docsrc/source/_autodoc/
+    sudo rm -rv ./docsrc/source/auto_gallery/
+
+    cd ..
     
     echo "Building new docs..."
 
     docker-compose run -v pyorb_pkg:/src/pyorb deploy bash -e doc.sh
-
-    git push
     ;;
 *)
     echo "Command not found, exiting"

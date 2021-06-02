@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd package
+cd pyorb
 
 python3 -m build
 python3 -m twine check dist/*
