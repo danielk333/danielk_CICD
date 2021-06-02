@@ -1,6 +1,13 @@
 #Sublime
 *.sublime*
 
+## PYORB ##
+
+pyorb/pyorb
+pyorb/deploy/requirements.txt
+
+
+
 #pypi token
 .pypirc
 

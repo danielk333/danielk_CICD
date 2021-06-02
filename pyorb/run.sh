@@ -17,11 +17,11 @@ build)
 
     if [ -z "$2" ]
     then
-        echo "using branch $2"
-        git checkout "$2"
-    else
         echo "Using branch master"
         git checkout master
+    else
+        echo "using branch $2"
+        git checkout "$2"
     fi
     
     git pull
@@ -52,20 +52,20 @@ ghpages)
 
     if [ -z "$2" ]
     then
-        echo "using branch $2"
-        git checkout "$2"
-    else
         echo "Using branch master"
         git checkout gh-pages
+    else
+        echo "using branch $2"
+        git checkout "$2"
     fi
 
     if [ -z "$3" ]
     then
-        echo "merging from branch $3"
-        git merge "$3"
-    else
         echo "merging from branch master"
         git merge master
+    else
+        echo "merging from branch $3"
+        git merge "$3"
     fi
 
     echo "Removing old docs..."
@@ -79,10 +79,8 @@ ghpages)
     docker-compose run -v pyorb_pkg:/src/pyorb deploy bash -e doc.sh
 
     git push
-
-*) echo "Command not found, exiting"
-   ;;
+    ;;
+*)
+    echo "Command not found, exiting"
+    ;;
 esac
-
-
-
