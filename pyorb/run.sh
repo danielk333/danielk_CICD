@@ -47,6 +47,10 @@ pypi)
     docker-compose run -v pyorb_pkg:/src/pyorb deploy bash -e deploy.sh
     docker-compose down
     ;;
+bash) 
+    docker-compose run -v pyorb_pkg:/src/pyorb deploy bash
+    docker-compose down
+    ;;
 down) 
     docker-compose down
     ;;
