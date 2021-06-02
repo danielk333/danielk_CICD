@@ -1,6 +1,9 @@
 #Sublime
 *.sublime*
 
+#pypi token
+.pypirc
+
 #vi/vim
 *~
 .*.swo
