@@ -28,6 +28,7 @@ build)
     cd ..
 
     cp pyorb/requirements deploy/requirements.txt
+    cp pyorb/dev_requirements deploy/dev_requirements.txt
 
     if [ -e "../.pypirc" ]; then
         echo "PyPI RC exists, cloning to pyorb"
