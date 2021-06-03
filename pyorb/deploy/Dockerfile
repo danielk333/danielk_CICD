@@ -4,10 +4,6 @@ FROM python:3.7
 
 WORKDIR /src
 
-RUN apt-get update -q && apt-get install -y --no-install-recommends --no-install-suggests \
-    texlive-full \
-    dvipng
-
 COPY test.sh test.sh
 COPY deploy.sh deploy.sh
 COPY doc.sh doc.sh

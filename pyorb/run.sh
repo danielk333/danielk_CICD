@@ -92,7 +92,6 @@ docs)
     echo "Removing old docs..."
     sudo rm -rv ./docs
     mkdir docs
-    sudo rm -rv ./docsrc/build/*
     sudo rm -rv ./docsrc/source/_autodoc/
     sudo rm -rv ./docsrc/source/auto_gallery/
 

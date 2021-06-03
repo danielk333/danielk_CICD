@@ -5,7 +5,7 @@
 
 pyorb/pyorb
 pyorb/deploy/requirements.txt
-
+pyorb/deploy/dev_requirements.txt
 
 
 #pypi token
