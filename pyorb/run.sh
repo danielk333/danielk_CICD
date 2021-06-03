@@ -100,6 +100,10 @@ docs)
     echo "Building new docs..."
 
     docker-compose run -v pyorb_pkg:/src/pyorb deploy bash -e doc.sh
+
+    cd pyorb 
+    git add docs/
+    git commit -m "docker-compile-docs"
     ;;
 *)
     echo "Command not found, exiting"
